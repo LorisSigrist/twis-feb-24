@@ -34,11 +34,9 @@ export default {
 ```js
 // src/lib/i18n.js
 import { createI18n } from '@inlang/paraglide-js-adapter-sveltekit';
+import * as runtime from "../paraglide/runtime.js";
 
-export const i18n = createI18n({
-  project: "./project.inlang",
-  outdir: "./src/paraglide",
-});
+export const i18n = createI18n(runtime);
 ```
 
 ```html
