@@ -2,6 +2,7 @@
 	import { page } from '$app/stores';
 	import logo from '$lib/images/svelte-logo.svg';
 	import github from '$lib/images/github.svg';
+  import { i18n } from '$lib/i18n';
 </script>
 
 <header>
@@ -16,14 +17,19 @@
 			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
 		</svg>
 		<ul>
-			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
+			<li aria-current={$page.route.id === '/' ? 'page' : undefined}>
 				<a href="/">Home</a>
 			</li>
-			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
+			<li aria-current={$page.route.id === '/about' ? 'page' : undefined}>
 				<a href="/about">About</a>
 			</li>
 			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
 				<a href="/sverdle">Sverdle</a>
+			</li>
+
+			<li>
+				<a href={i18n.route($page.url.pathname)} hreflang="en">En</a>
+				<a href={i18n.route($page.url.pathname)} hreflang="de">De</a>
 			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
