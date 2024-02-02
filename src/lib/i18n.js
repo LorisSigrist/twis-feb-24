@@ -6,10 +6,8 @@ import * as m from "../paraglide/messages.js";
 export const i18n = createI18n(runtime, {
     pathnames: {
         "/about": {
-            //@ts-ignore
-            en: "/" + m.path_about({}, { languageTag: "en" }),
-            //@ts-ignore
-            de: "/" + m.path_about({}, {languageTag: "de"}),
+            en: `/${m.path_about({}, { languageTag: "en" })}`,
+            de: `/${m.path_about({}, {languageTag: "de"})}`,
         },
         "/admin/users/[id]": {
             en: "/admin/users/[id]",
