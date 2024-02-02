@@ -1,17 +1,21 @@
-# Sverdle
+# Sverdle
 
 The default SvelteKit demo App. Currently this is unchanged.
 
 ## Setup
-1. Install Paraglide
+
+### 1. Install Paraglide
+
 ```bash
 npx @inlang/paraglide-js init
 ```
-2. Install the SvelteKit Adapter
+### 2. Install the SvelteKit Adapter
+
 ```bash
 npm install @inlang/paraglide-js-adapter-sveltekit
 ```
-3. Register the Vite plugin in `vite.config.js`
+### 3. Register the Vite plugin in `vite.config.js`
+
 ```javascript
 import { paraglide } from '@inlang/paraglide-js-adapter-sveltekit/vite'
 
@@ -23,8 +27,9 @@ export default {
     });
   ],
 }
+```
 
-4. Initialize the Adapter 
+### 4. Initialize the Adapter 
 
 ```js
 // src/lib/i18n.js
@@ -36,7 +41,7 @@ export const i18n = createI18n({
 });
 ```
 
-```svelte
+```html
 <!-- src/routes/+layout.svelte -->
 <script>
   import { i18n } from '$lib/i18n';
@@ -48,7 +53,7 @@ export const i18n = createI18n({
 </ParaglideJS>
 ```
 
-5. Register the hooks
+### 5. Register the hooks
 
 ```js
 // src/hooks.js
